@@ -9,9 +9,9 @@ const links = [
   { link: "Contact Me", section: "contact" },
 ];
 
-const NavbarLinks = () => {
+const NavbarLinks = ({closeMenu}) => {
   return (
-    <ul className="flex gap-6 font-bold text-center py-4 lg:flex-row sm:flex-col lg:relative sm:absolute sm:top-[120%] left-[50%] -translate-x-[50%] lg:text-md sm:text-xl sm:bg-cyan/30 backdrop:blur-lg lg:bg-black sm:w-full">
+    <ul className="flex gap-6 font-bold text-center py-4 lg:flex-row sm:flex-col lg:relative sm:absolute sm:top-[120%] left-[50%] -translate-x-[50%] lg:text-md sm:text-xl sm:bg-cyan/40 backdrop:blur-lg lg:bg-black sm:w-full">
       {links.map((link, index) => {
         return (
           <li key={index} className="group">
@@ -21,6 +21,7 @@ const NavbarLinks = () => {
               spy={true}
               duration={500}
               offset={-130}
+              onClick={closeMenu}
               className="hover:text-cyan transition-all duration-500 cursor-pointer"
             >
               {link.link}

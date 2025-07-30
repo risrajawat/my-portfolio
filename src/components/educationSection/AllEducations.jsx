@@ -16,7 +16,7 @@ const educations = [
   {
     title: "Bachelor of Technology(B.Tech)",
     school: "Newton School of Technology",
-    years: "2024-2029",
+    years: "2025-2029",
     stream: "Computer Science & Artificial Intellegence",
   },
 ];
@@ -26,8 +26,8 @@ const AllEducations = () => {
     <div className="flex md:flex-row sm:flex-col items-center justify-center gap-24">
       {educations.map((education, index) => {
         return (
-          <>
-            <SingleEducation key={index} education={education} />
+          <React.Fragment key={index}>
+            <SingleEducation education={education} />
             {index < 1 ? (
               <motion.div>
                 <FaArrowRight className="text-6xl text-orange lg:block sm:hidden" />
@@ -35,7 +35,7 @@ const AllEducations = () => {
             ) : (
               ""
             )}
-          </>
+          </React.Fragment>
         );
       })}
     </div>
